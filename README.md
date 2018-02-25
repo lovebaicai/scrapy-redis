@@ -8,10 +8,10 @@
 # filename: spiders
 # linenumber：82
 while found < self.redis_batch_size:
-            data = fetch_one(self.redis_key)
-            if not data:
-                # Queue empty.
-                #self.crawler.engine.close_spider(self.name, 'finished')
-                self.crawler.engine.close_spider(spider=self, reason='queue is empty, the spider close')
-                break
+    data = fetch_one(self.redis_key)
+    if not data:
+        # Queue empty.
+        #self.crawler.engine.close_spider(self.name, 'finished')
+        self.crawler.engine.close_spider(spider=self, reason='queue is empty, the spider close')
+        break
 ```
